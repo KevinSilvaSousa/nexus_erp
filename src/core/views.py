@@ -2,8 +2,13 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 
-# Create your views here.
-
 
 def home(request):
-    return HttpResponse("Bem-vindo ao Nexus ERP!")
+    nexus_erp = "Nexus ERP"
+
+    test = {
+        "company_name": nexus_erp,
+        "version": " 1.0"
+    }
+    
+    return render(request, "core/home.html", test)
